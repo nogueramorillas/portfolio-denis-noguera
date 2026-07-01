@@ -1,3 +1,15 @@
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+if (location.hash) {
+  history.replaceState(null, "", location.pathname + location.search);
+}
+const resetScrollToTop = () => window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+resetScrollToTop();
+window.addEventListener("load", resetScrollToTop);
+document.fonts && document.fonts.ready.then(resetScrollToTop);
+[50, 150, 300, 600, 1000].forEach((delay) => setTimeout(resetScrollToTop, delay));
+
 const header = document.querySelector("[data-header]");
 const whatsappPhone = "34645513694";
 
