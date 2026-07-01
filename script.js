@@ -13,8 +13,18 @@ const buildWhatsappUrl = (message) => {
 };
 
 document.querySelectorAll("[data-whatsapp]").forEach((link) => {
-  const message = link.dataset.message || "Hola Denis, me gustaria hablar sobre una web para mi negocio.";
+  const message = link.dataset.message || "Hola Denis, me gustaría hablar sobre una web para mi negocio.";
   link.href = buildWhatsappUrl(message);
+});
+
+document.querySelectorAll(".service-tab").forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const target = tab.dataset.tab;
+    document.querySelectorAll(".service-tab").forEach((t) => t.classList.remove("active"));
+    document.querySelectorAll(".service-list").forEach((p) => p.classList.add("hidden"));
+    tab.classList.add("active");
+    document.querySelector(`[data-panel="${target}"]`).classList.remove("hidden");
+  });
 });
 
 document.querySelector(".contact-form").addEventListener("submit", (event) => {
