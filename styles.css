@@ -335,6 +335,8 @@ h2 {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.14);
   padding: 28px;
+  content-visibility: auto;
+  contain-intrinsic-height: 540px;
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
@@ -429,6 +431,29 @@ h2 {
   filter: saturate(1.06) contrast(1.03);
 }
 
+.project-preview.crossfade img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: preview-crossfade 11s infinite;
+}
+
+.project-preview.crossfade img:nth-of-type(2) {
+  animation-delay: 5.5s;
+}
+
+@keyframes preview-crossfade {
+  0%, 3% {
+    opacity: 0;
+  }
+  8%, 42% {
+    opacity: 1;
+  }
+  47%, 100% {
+    opacity: 0;
+  }
+}
+
 .project-card h3,
 .service-list h3,
 .timeline h3 {
@@ -446,16 +471,36 @@ h2 {
 
 .project-link {
   display: inline-flex;
+  align-items: center;
+  gap: 8px;
   width: fit-content;
   margin-top: 22px;
-  border-bottom: 2px solid currentColor;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  padding: 10px 20px;
   color: var(--gold);
   font-size: 14px;
   font-weight: 800;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.project-link::after {
+  content: "\2192";
+}
+
+.project-link:hover {
+  background: var(--gold);
+  color: var(--ink);
 }
 
 .project-card.featured .project-link {
+  border-color: var(--teal);
   color: var(--teal);
+}
+
+.project-card.featured .project-link:hover {
+  background: var(--teal);
+  color: var(--white);
 }
 
 .service-tabs {
