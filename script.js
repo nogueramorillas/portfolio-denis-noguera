@@ -25,7 +25,7 @@ const buildWhatsappUrl = (message) => {
 };
 
 document.querySelectorAll("[data-whatsapp]").forEach((link) => {
-  const message = link.dataset.message || "Hola Denis, me gustaría hablar sobre una web para mi negocio.";
+  const message = link.dataset.message || "Hola, me gustaría hablar sobre una web para mi negocio.";
   link.href = buildWhatsappUrl(message);
 });
 
@@ -47,7 +47,7 @@ document.querySelector(".contact-form").addEventListener("submit", (event) => {
   const email = form.elements.email.value.trim();
   const details = form.elements.mensaje.value.trim();
   const message = [
-    "Hola Denis, he visto tu portfolio y quiero hablar sobre una web.",
+    "Hola, he visto el portfolio y quiero hablar sobre una web.",
     name ? `Nombre: ${name}` : "",
     email ? `Email: ${email}` : "",
     details ? `Necesidad: ${details}` : "",

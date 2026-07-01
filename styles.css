@@ -74,17 +74,9 @@ a {
   transform: translateY(-1px);
 }
 
-.brand strong,
-.brand small {
+.brand strong {
   display: block;
   white-space: nowrap;
-}
-
-.brand small {
-  margin-top: 2px;
-  color: currentColor;
-  font-size: 12px;
-  opacity: 0.72;
 }
 
 .nav {
@@ -868,10 +860,6 @@ textarea:focus {
 }
 
 @media (max-width: 520px) {
-  .brand small {
-    display: none;
-  }
-
   .brand-mark {
     width: 44px;
     height: 44px;
