@@ -366,6 +366,10 @@ h2 {
   font-size: 12px;
 }
 
+.preview-link {
+  display: block;
+}
+
 .project-preview {
   position: relative;
   overflow: hidden;
