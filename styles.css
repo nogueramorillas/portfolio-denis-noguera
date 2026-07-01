@@ -435,11 +435,11 @@ h2 {
   position: absolute;
   inset: 0;
   opacity: 0;
-  animation: preview-crossfade 11s infinite;
+  animation: preview-crossfade 30s infinite;
 }
 
 .project-preview.crossfade img:nth-of-type(2) {
-  animation-delay: 5.5s;
+  animation-delay: 15s;
 }
 
 @keyframes preview-crossfade {
